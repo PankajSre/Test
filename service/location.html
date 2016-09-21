@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<script src="../angular.min.js"></script>
+<body>
+
+<div ng-app="myApp" ng-controller="myCtrl">
+<p>The url of this page is:</p>
+<h3>{{myWelcome}}</h3>
+</div>
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope, $http) {
+  $http.get("First.html").then(function (response) {
+     $scope.myWelcome = response.data;
+ });
+});
+</script>
+
+</body>
+</html>

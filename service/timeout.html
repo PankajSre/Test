@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<script src="../angular.min.js"></script>
+<body>
+
+<div ng-app="myApp" ng-controller="myCtrl">
+<p>The url of this page is:</p>
+<h3>{{message}}</h3>
+</div>
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope, $timeout) {
+$scope.message='Hello Dear !';
+$timeout(function () {
+  $scope.message='How are You ?';
+}, 3000);
+});
+</script>
+
+</body>
+</html>
